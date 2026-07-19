@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abbas Yakubu · about</title>
+  <!-- inline CSS = all styles in <style> inside head -->
+  <style>
+    /* ----- global reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f6f9fc 0%, #e9f0f5 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      padding: 1.5rem;
+      margin: 0;
+    }
+
+    /* ----- main card ----- */
+    .card {
+      max-width: 780px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px);
+      background: #ffffff;
+      border-radius: 2.5rem;
+      padding: 2.5rem 2.8rem;
+      box-shadow: 0 25px 45px -12px rgba(0, 20, 30, 0.25),
+                  0 8px 18px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .card:hover {
+      transform: scale(1.005);
+    }
+
+    /* ----- header / avatar + name ----- */
+    .profile-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #2b3a67, #1d2b4b);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 18px -6px rgba(26, 42, 74, 0.3);
+      flex-shrink: 0;
+      border: 3px solid white;
+    }
+
+    .title-group h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: #0b1a2e;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .title-group .badge {
+      display: inline-block;
+      background: #d0e0f0;
+      color: #1a3350;
+      padding: 0.35rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-top: 0.3rem;
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .title-group .sub-line {
+      font-size: 1rem;
+      color: #2d4a6a;
+      margin-top: 0.4rem;
+      font-weight: 450;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .title-group .sub-line span {
+      background: #eef4fa;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+    }
+
+    /* ----- divider ----- */
+    .divider {
+      margin: 1.8rem 0 2rem 0;
+      height: 2px;
+      background: linear-gradient(90deg, #c0d4e8, #e1ecf5, #c0d4e8);
+      border-radius: 10px;
+      opacity: 0.6;
+    }
+
+    /* ----- about / bio ----- */
+    .bio {
+      background: #f2f8ff;
+      padding: 1.2rem 1.8rem;
+      border-radius: 2rem;
+      margin-bottom: 2.2rem;
+      border-left: 6px solid #2b3a67;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+    }
+
+    .bio p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #1f3349;
+      font-weight: 450;
+    }
+
+    .bio strong {
+      color: #0f263e;
+      font-weight: 700;
+    }
+
+    /* ----- hobbies grid ----- */
+    .hobbies-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1f3349;
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.2px;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hobbies-title i {
+      font-size: 1.4rem;
+    }
+
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .hobby-item {
+      background: white;
+      border-radius: 60px;
+      padding: 0.7rem 1.2rem 0.7rem 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      border: 1px solid #dce8f2;
+      transition: all 0.15s ease;
+      font-weight: 500;
+      color: #1f364f;
+      backdrop-filter: blur(2px);
+      background: rgba(255,255,255,0.75);
+    }
+
+    .hobby-item:hover {
+      background: #ffffff;
+      border-color: #7d9bc7;
+      box-shadow: 0 8px 14px -8px rgba(30, 60, 100, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .hobby-emoji {
+      font-size: 1.6rem;
+      line-height: 1;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+    }
+
+    /* ----- footer / extra touch ----- */
+    .footer-note {
+      margin-top: 2.5rem;
+      text-align: right;
+      font-size: 0.8rem;
+      color: #5d7188;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      padding-top: 1.2rem;
+      letter-spacing: 0.4px;
+      opacity: 0.7;
+    }
+
+    /* responsive */
+    @media (max-width: 550px) {
+      .card {
+        padding: 1.8rem 1.5rem;
+        border-radius: 2rem;
+      }
+      .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      .avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 2.2rem;
+      }
+      .title-group h1 {
+        font-size: 1.9rem;
+      }
+      .hobby-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hobby-item {
+        padding: 0.6rem 0.8rem 0.6rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hobby-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- header: avatar + name + level -->
+    <div class="profile-header">
+      <div class="avatar">AY</div>
+      <div class="title-group">
+        <h1>Abbas Yakubu</h1>
+        <div class="badge">🌟 level IV · software engineering</div>
+        <div class="sub-line">
+          <span>🎓 student</span>
+          <span>💻 code · play · create</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- bio : about me -->
+    <div class="bio">
+      <p>
+        <strong>👋 Hi, I'm Abbas</strong> — a <strong>level four</strong> student 
+        in the <strong>Software Engineering</strong> department. 
+        I’m deeply passionate about building things, solving problems, 
+        and learning new technologies. When I’m not in front of a screen, 
+        I enjoy gaming, playing football, and watching movies.
+      </p>
+    </div>
+
+    <!-- hobbies section -->
+    <div class="hobbies-title">
+      <span>⚡ hobbies & interests</span>
+    </div>
+
+    <div class="hobby-grid">
+      <!-- gaming -->
+      <div class="hobby-item">
+        <span class="hobby-emoji">🎮</span> Gaming
+      </div>
+      <!-- coding -->
+      <div class="hobby-item">
+        <span class="hobby-emoji">💻</span> Coding
+      </div>
+      <!-- football -->
+      <div class="hobby-item">
+        <span class="hobby-emoji">⚽</span> Football
+      </div>
+      <!-- watching movies -->
+      <div class="hobby-item">
+        <span class="hobby-emoji">🎬</span> Movies
+      </div>
+    </div>
+
+    <!-- extra little detail:  inline vibe -->
+    <div class="footer-note">
+      Abbas Yakubu · software engineering · level 4
+    </div>
+
+  </div>
+</body>
+</html>
