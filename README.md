@@ -8,3 +8,4 @@ This repository is for the Software Configuration Management, Group 3B assignmen
 2. Ahmad Babangida - (CST/22/SWE/00813)
 3. Abdulhafeez Ibrahim Ahmad  - (CST/22/SWE/00822)
 4. Abbas Yakubu - (CST/22/SWE/00850)
+5. Usman Alamin Umar - (CST/20/SWE/512)
